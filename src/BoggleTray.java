@@ -1,4 +1,4 @@
-
+// hey Ruby
 // by Irene Moreno and Ruby Abrams
 public class BoggleTray {
 	private char[][] tray;
