@@ -74,6 +74,11 @@ public class BoggleTrayTest {
 	  assertFalse(bt.isNeighbor('A', 'C', tray));
   }
 
+  @Test
+  public void testFind(){
+	  BoggleTray bt = new BoggleTray(tray);
+	  assertTrue(bt.find(0,0,"A", tray));
+  }
 
   // More tests will be necessary
 
