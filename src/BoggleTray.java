@@ -2,7 +2,7 @@ import java.util.Stack;
 
 public class BoggleTray {
 	private char[][] tray;
-	private Stack<Character> stack;
+	//private Stack<Character> stack; //not needed anymore
 	private String input;
 
 	// Constructor takes a 2D array of characters that represents the
@@ -15,7 +15,7 @@ public class BoggleTray {
 			}
 		}
 
-		stack = new Stack<Character>();
+		//stack = new Stack<Character>(); //not needed anymore
 	}
 
 	// Return true if str is found in the Boggle BoggleTray according to Boggle
