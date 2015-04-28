@@ -30,8 +30,8 @@ public class BoggleTray {
 		int i = 0;
 		int j = 0;
 		while (i < 4) {
-			while (j < 4) {
-				helper(i, j, input, temp);
+			while (j < 4) { //iterate through the [][]array
+				helper(i, j, input, temp); //will return true or false
 				j++;
 			}
 			i++;
@@ -44,16 +44,28 @@ public class BoggleTray {
 		return isNeighbor(i, j, 1);
 	}
 
+	//this method will tell us if the entire string (ref) is
+	//found in the [][] array
 	private boolean helper(int i, int j, String ref, char[][] temp) {
 
-		if (temp[i][j] == ref.charAt(0)) {
-			temp[i][j] = ' ';
-			if (isNeighbor(ref.substring(1))) 
-				// have neighbor return i and j
-				helper(i, j, ref.substring(1), temp);
-			else
+		if (temp[i][j] == ref.charAt(0)) { //the position of the first character
+			temp[i][j] = ' '; //change to blank space
+			if (isNeighbor(ref.substring(1))) //check to see if the second character is a neighbor
+				// a method to return the (i,j) coordinates
+				// of the neighbor
+				// int i = row(ref.substring(1));
+				// int j = col(ref.substring(1));
+				helper(i, j, ref.substring(1), temp); //recursion call for next letter in string
+				//we must somehow record each letter that is matched to the input string
+				//or hava base case that will return true when all letters match
+				//the input string
+				//is it enough to write here:
+				//return true?
+			else //the next letter is not a neighbour: search for next
+				//occurence of the first letter
 				foundInBoggleTray(input);
-		}
+		}//else position of first character is not found:
+		//return false;
 	}
 
 	private boolean isNeighbor(int i, int j, int index) {
