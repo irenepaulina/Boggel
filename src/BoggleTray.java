@@ -29,8 +29,9 @@ public class BoggleTray {
 		int j = 0;
 		while (i < 4) {
 			while (j < 4) { // iterate through the [][]array
-				find(i, j, input, temp); // will return true or false
+				boolean found = find(i, j, input, temp); // will return true or false
 				j++;
+				return found;
 			}
 			i++;
 		}
